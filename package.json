@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,json}'"
   },
   "dependencies": {
     "react": "latest",
@@ -22,8 +23,10 @@
     "autoprefixer": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "postcss": "latest",
+    "prettier": "^3.0.3",
     "tailwindcss": "latest",
     "typescript": "latest"
   }
