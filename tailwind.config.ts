@@ -1,3 +1,4 @@
+import { fontFamily } from 'tailwindcss/defaultTheme'
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -8,9 +9,43 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+      colors: {
+        border: 'rgba(#1c1c16, 0.6)',
+        input: '#d3d3d3',
+        background: '#fffbff',
+        primary: {
+          DEFAULT: '#343434',
+          text: '#fffff2'
+        },
+        secondary: {
+          DEFAULT: '#F4F4F4',
+          text: '#171717'
+        },
+        tertiary: {
+          DEFAULT: '#DBDBDB',
+          text: '#171717'
+        },
+        error: {
+          DEFAULT: '#ba1a1a',
+          text: '#fffff2'
+        }
+      },
+      borderRadius: {
+        lg: `0.5rem`,
+        md: `calc(0.5rem - 2px)`,
+        sm: 'calc(0.5rem - 4px)'
+      },
+      fontFamily: {
+        sans: ['Roboto', ...fontFamily.sans]
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '100' }
+        }
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.5s ease-in-out'
       }
     }
   },
