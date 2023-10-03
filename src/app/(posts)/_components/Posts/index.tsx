@@ -2,7 +2,7 @@ import * as React from 'react'
 import { VariantProps } from 'cva'
 import Link from 'next/link'
 import { PostType } from '../../_types'
-import { getPostsList } from '../../server/posts'
+import { getPostList } from '../../server/posts'
 import { bookVariants } from '../Book'
 import { Post } from './Post'
 
@@ -36,6 +36,6 @@ export const Posts = ({ posts }: { posts: PostType[] }) => {
 }
 
 export const PostList = async () => {
-  const { contents: posts } = await getPostsList({ limit: 4 })
+  const { contents: posts } = await getPostList({ limit: 4 })
   return <Posts posts={posts} />
 }
