@@ -23,7 +23,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, Props>(function AnchorBu
   ref
 ) {
   return (
-    <NextLink className={combineStyles(linkVariants({ size, className }))} ref={ref} {...props}>
+    <NextLink className={combineStyles(linkVariants({ size }), className)} ref={ref} {...props}>
       {children}
     </NextLink>
   )
