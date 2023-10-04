@@ -40,7 +40,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function 
   ref
 ) {
   return (
-    <button {...props} ref={ref} className={combineStyles(buttonVariants({ variant, size, isLoading, className }))}>
+    <button {...props} ref={ref} className={combineStyles(buttonVariants({ variant, size, isLoading }), className)}>
       {children}
       {isLoading && <Spinner />}
     </button>
