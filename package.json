@@ -20,6 +20,7 @@
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@heroicons/react": "^2.0.18",
     "@storybook/addon-a11y": "^7.4.5",
     "@storybook/addon-essentials": "^7.4.5",
     "@storybook/addon-interactions": "^7.4.5",
