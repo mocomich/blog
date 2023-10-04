@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         border: 'rgba(#1c1c16, 0.6)',
         input: '#d3d3d3',
-        background: '#fffbff',
+        background: '#fffff',
         primary: {
           DEFAULT: '#343434',
           text: '#fffff2'
