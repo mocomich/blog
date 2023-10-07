@@ -22,8 +22,6 @@ export const useMobileNav = () => {
 
   const onToggleNav = useCallback(() => {
     setIsShow((status) => {
-      console.log(status)
-
       if (status) {
         document.body.style.overflow = 'auto'
       } else {
