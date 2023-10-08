@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { PostType } from '../../_types'
+import { PostType } from '../../../_types'
 
-const Tag = ({ children }: { children: React.ReactNode }) => {
+export const Tag = ({ children }: { children: React.ReactNode }) => {
   return <span className="rounded-full bg-gray-500 px-2 py-0.5 text-xs">{children}</span>
 }
 
