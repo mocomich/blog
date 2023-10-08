@@ -1,5 +1,5 @@
+import { PostList } from './_components/BookPosts'
 import { HeaderWithLink } from './_components/Header'
-import { PostList } from './_components/Posts'
 
 export default function Home() {
   return (
