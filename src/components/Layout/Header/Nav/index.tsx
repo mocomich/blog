@@ -1,8 +1,8 @@
 'use client'
 
 import * as React from 'react'
-import { Path } from '@/app/(posts)/_types'
-import { NavLink } from '@/app/_components/NavLink'
+import { Path } from '@/app/_types'
+import { NavLink } from '@/components/NavLink'
 
 export const Nav = ({ paths }: { paths: Readonly<Path[]> }) => {
   return (

@@ -2,7 +2,7 @@
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import {} from '@/app/_const'
-import { Path } from '@/app/(posts)/_types'
+import { Path } from '@/app/_types'
 import { Button } from '../../../Button'
 import { NavLink } from '../../../NavLink'
 import { useMobileNav } from './useMobileNav'

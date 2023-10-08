@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Typography } from '@/app/_components/Typography'
+import { Typography } from '../Typography'
 
 type Props = {
   title: string

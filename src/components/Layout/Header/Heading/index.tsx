@@ -1,4 +1,4 @@
-import { Link } from '@/app/_components/Link'
+import { Link } from '@/components/Link'
 
 export const Heading = () => {
   return (
