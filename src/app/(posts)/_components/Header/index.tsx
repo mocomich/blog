@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { AnchorButton } from '@/app/_components/AnchorButton'
-import { HeadGroup } from '@/app/_components/HeadGroup'
+import { AnchorButton } from '@/components/AnchorButton'
+import { HeadGroup } from '@/components/HeadGroup'
 
 export const HeaderWithLink = ({ title }: { title: string }) => {
   return (
