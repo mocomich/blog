@@ -1,4 +1,4 @@
-import { PostType } from '../_types'
+import { PostType } from '@/app/_types'
 
 export const postsFixture = (num: number): PostType[] => {
   return [...new Array(num)].map((_, i) => ({
@@ -8,7 +8,7 @@ export const postsFixture = (num: number): PostType[] => {
     url: 'http',
     body: 'test',
     tags: ['Next.js', 'React'],
-    domain: 'Zenn',
+    domain: 'zenn.dev',
     updatedAt: '2022',
     publishedAt: '202'
   }))
