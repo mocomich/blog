@@ -1,6 +1,18 @@
-import { PostList } from '@/app/(posts)/_components/CardPosts'
-import { SearchParams } from '@/app/_types'
+import { Posts } from '@/app/(posts)/_components/CardPosts'
+import { Pagination } from '@/app/(posts)/_components/Pagination'
+import { PerPage } from '@/app/(posts)/_const'
+import { getPostList } from '@/app/(posts)/server/posts'
 
-export default function Page({ searchParams }: { searchParams: SearchParams }) {
-  return <PostList searchParams={searchParams} domain={'tech-vinyl.com'} />
+export default async function Page() {
+  const filters = `domain[contains]tech-vinyl.com`
+  const { contents: posts, totalCount } = await getPostList({
+    limit: PerPage,
+    filters
+  })
+  return (
+    <>
+      <Posts posts={posts} />
+      <Pagination totalCount={totalCount} current={1} basePath={'/posts/vinyl'} />
+    </>
+  )
 }
