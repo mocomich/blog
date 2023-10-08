@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react'
 
-import { Typography } from '@/app/_components/Typography'
+import { Typography } from '@/components/Typography'
 import { DateTime } from '../DateTime'
 import { Domain } from '../Domain'
 import { Book } from '.'
