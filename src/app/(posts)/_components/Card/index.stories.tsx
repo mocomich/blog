@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react'
 import { Typography } from '@/components/Typography'
 import { DateTime } from '../DateTime'
 import { Domain } from '../Domain'
-import { TagList } from '../Tag'
+import { TagButtonList } from '../TagButtonList'
 import Card from '.'
 
 const meta: Meta<typeof Card> = {
@@ -17,7 +17,7 @@ const meta: Meta<typeof Card> = {
             テスト
           </Typography>
           <div className="grid gap-4">
-            <TagList tags={['Next.js', 'React']} />
+            <TagButtonList tags={['Next.js', 'React']} />
             <div className="flex justify-between">
               <Domain>vinyl.com</Domain>
               <DateTime className="text-xs" dateTime={'2022-09-09T00:00:00.000Z'}>
