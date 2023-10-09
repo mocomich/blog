@@ -5,7 +5,7 @@ export const PathMap = {
   allPosts: () => '/posts/all',
   vinylPosts: () => '/posts/vinyl',
   zennPosts: () => '/posts/zenn',
-  postDetail: (id: string) => `posts/${id}`,
+  postDetail: (id: string) => `/posts/${id}`,
   tagsPosts: (tag: string) => `/posts/tags/${tag}`
 } as const
 
