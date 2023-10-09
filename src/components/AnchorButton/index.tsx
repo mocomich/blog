@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { combineStyles } from '@/app/_libs/style'
 
 export const anchorButtonVariants = cva({
-  base: 'border border-primary font-semibold hover:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50',
+  base: 'relative inline-flex items-center justify-center  border border-primary font-semibold transition-colors hover:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50',
   variants: {
     size: {
       sm: 'px-2 py-1 text-base',
