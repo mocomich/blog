@@ -1,12 +1,21 @@
 import { Path } from '@/app/_types'
 
+export const PathMap = {
+  home: () => '/',
+  allPosts: () => '/posts/all',
+  vinylPosts: () => '/posts/vinyl',
+  zennPosts: () => '/posts/zenn',
+  postDetail: (id: string) => `posts/${id}`,
+  tagsPosts: (tag: string) => `/posts/tags/${tag}`
+} as const
+
 export const PostsNavPaths = [
-  { href: '/posts/all', title: 'All' },
-  { href: '/posts/vinyl', title: 'Vinyl' },
-  { href: '/posts/zenn', title: 'Zenn' }
+  { href: PathMap.allPosts(), title: 'All' },
+  { href: PathMap.vinylPosts(), title: 'Vinyl' },
+  { href: PathMap.zennPosts(), title: 'Zenn' }
 ] as const satisfies Readonly<Path[]>
 
 export const HeaderNavPaths = [
-  { href: '/', title: 'Home' },
-  { href: '/posts/all', title: 'Posts' }
+  { href: PathMap.home(), title: 'Home' },
+  { href: PathMap.allPosts(), title: 'Posts' }
 ] as const satisfies Readonly<Path[]>
