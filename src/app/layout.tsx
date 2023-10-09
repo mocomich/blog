@@ -1,5 +1,5 @@
 import '@/app/globals.css'
-import { Layout } from '@/app/_components/Layout'
+import { Layout } from '@/components/Layout'
 import type { Metadata } from 'next'
 
 // metadataは後でまとめて
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja">
+    <html lang="ja" className="scroll-smooth">
       <body className="relative flex min-h-screen flex-col overflow-auto">
         <Layout>{children}</Layout>
       </body>
