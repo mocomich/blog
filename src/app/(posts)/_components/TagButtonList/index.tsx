@@ -1,3 +1,4 @@
+import { PathMap } from '@/app/_const'
 import { PostType } from '@/app/_types'
 import { TagButton } from './Button'
 
@@ -6,7 +7,7 @@ export const TagButtonList = ({ tags }: Pick<PostType, 'tags'>) => {
     <ul className="flex flex-wrap gap-2">
       {tags.map((tag) => (
         <li key={tag}>
-          <TagButton path={`/posts/tags/${tag}`}>{tag}</TagButton>
+          <TagButton path={PathMap.tagsPosts(tag)}>{tag}</TagButton>
         </li>
       ))}
     </ul>

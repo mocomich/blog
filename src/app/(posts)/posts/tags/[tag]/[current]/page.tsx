@@ -2,6 +2,7 @@ import { Posts } from '@/app/(posts)/_components/CardPosts'
 import { Pagination } from '@/app/(posts)/_components/Pagination'
 import { PerPage } from '@/app/(posts)/_const'
 import { getPostList } from '@/app/(posts)/server/posts'
+import { PathMap } from '@/app/_const'
 
 type Props = {
   params: {
@@ -24,7 +25,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <Posts posts={posts} />
-      <Pagination totalCount={totalCount} current={current} basePath={`/posts/tags/${tag}`} />
+      <Pagination totalCount={totalCount} current={current} basePath={PathMap.tagsPosts(tag)} />
     </>
   )
 }

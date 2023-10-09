@@ -2,6 +2,7 @@ import { Posts } from '@/app/(posts)/_components/CardPosts'
 import { Pagination } from '@/app/(posts)/_components/Pagination'
 import { PerPage } from '@/app/(posts)/_const'
 import { getPostList } from '@/app/(posts)/server/posts'
+import { PathMap } from '@/app/_const'
 
 export default async function Page() {
   const filters = `domain[contains]tech-vinyl.com`
@@ -12,7 +13,7 @@ export default async function Page() {
   return (
     <>
       <Posts posts={posts} />
-      <Pagination totalCount={totalCount} current={1} basePath={'/posts/vinyl'} />
+      <Pagination totalCount={totalCount} current={1} basePath={PathMap.vinylPosts()} />
     </>
   )
 }

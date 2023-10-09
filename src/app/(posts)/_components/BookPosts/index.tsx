@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { VariantProps } from 'cva'
 import Link from 'next/link'
+import { PathMap } from '@/app/_const'
 import { PostType } from '@/app/_types'
 import { getPostList } from '../../server/posts'
 import { bookVariants } from '../Book'
@@ -28,7 +29,7 @@ export const Posts = ({ posts }: { posts: PostType[] }) => {
         <li key={post.id} className="mx-auto max-w-[300px] px-8">
           <Link
             aria-label={post.title}
-            href={post.domain[0] === 'zenn.dev' ? post.url : `/posts/${post.id}`}
+            href={post.domain[0] === 'zenn.dev' ? post.url : PathMap.postDetail(post.id)}
             target={post.domain[0] === 'zenn.dev' ? '_blank' : undefined}
           >
             <Post variant={getVariant(i)} title={post.title} domain={post.domain} publishedAt={post.publishedAt} />
