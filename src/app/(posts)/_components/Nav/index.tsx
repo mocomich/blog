@@ -16,7 +16,7 @@ export const Nav = ({ ...props }: NavProps) => {
       <ul className="flex gap-8">
         {PostsNavPaths.map((path) => (
           <li key={path.title}>
-            <NavLink href={path.href} {...isCurrent(pathname === path.href)} size="md" current>
+            <NavLink href={path.href} {...isCurrent(pathname.includes(path.href))} size="md" current>
               {path.title}
             </NavLink>
           </li>
