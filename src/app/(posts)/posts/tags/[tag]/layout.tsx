@@ -12,7 +12,7 @@ export default function Layout({ children, params }: Props) {
 
   return (
     <section aria-label={`${tag}の記事一覧`} className="space-y-16 py-8">
-      <HeadGroup title={`${tag}の記事一覧`} as={'h1'} variant={'h1'} />
+      <HeadGroup title={`${tag} の記事一覧`} as={'h1'} variant={'h1'} />
       {children}
     </section>
   )
