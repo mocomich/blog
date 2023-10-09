@@ -8,7 +8,7 @@ export const postsFixture = (num: number): PostType[] => {
     url: 'http',
     body: 'test',
     tags: ['Next.js', 'React'],
-    domain: 'zenn.dev',
+    domain: ['zenn.dev'],
     updatedAt: '2022',
     publishedAt: '202'
   }))
