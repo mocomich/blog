@@ -6,7 +6,7 @@ import { HeadGroup } from '@/components/HeadGroup'
 export const HeaderWithLink = ({ title }: { title: string }) => {
   return (
     <HeadGroup title={title} variant={'h1'} as={'h2'}>
-      <AnchorButton href={PathMap.home()}>All POSTS</AnchorButton>
+      <AnchorButton href={PathMap.allPosts()}>All POSTS</AnchorButton>
     </HeadGroup>
   )
 }
