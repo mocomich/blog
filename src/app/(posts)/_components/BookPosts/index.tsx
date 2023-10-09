@@ -26,7 +26,11 @@ export const Posts = ({ posts }: { posts: PostType[] }) => {
     <ul className="flex w-full overflow-x-scroll py-6">
       {posts.map((post, i) => (
         <li key={post.id} className="mx-auto max-w-[300px] px-8">
-          <Link aria-label={post.title} href={`/posts/${post.url}`}>
+          <Link
+            aria-label={post.title}
+            href={post.domain[0] === 'zenn.dev' ? post.url : `/posts/${post.id}`}
+            target={post.domain[0] === 'zenn.dev' ? '_blank' : undefined}
+          >
             <Post variant={getVariant(i)} title={post.title} domain={post.domain} publishedAt={post.publishedAt} />
           </Link>
         </li>
