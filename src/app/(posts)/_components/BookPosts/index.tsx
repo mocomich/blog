@@ -3,7 +3,6 @@ import { VariantProps } from 'cva'
 import Link from 'next/link'
 import { PathMap } from '@/app/_const'
 import { PostType } from '@/app/_types'
-import { getPostList } from '../../server/posts'
 import { bookVariants } from '../Book'
 import { Post } from './Post'
 
@@ -38,9 +37,4 @@ export const Posts = ({ posts }: { posts: PostType[] }) => {
       ))}
     </ul>
   )
-}
-
-export const PostList = async () => {
-  const { contents: posts } = await getPostList({ limit: 4 })
-  return <Posts posts={posts} />
 }
