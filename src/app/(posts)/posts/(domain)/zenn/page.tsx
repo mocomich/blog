@@ -7,8 +7,10 @@ import { PathMap } from '@/app/_const'
 export default async function Page() {
   const filters = `domain[contains]zenn.dev`
   const { contents: posts, totalCount } = await getPostList({
-    limit: PerPage,
-    filters
+    queries: {
+      limit: PerPage,
+      filters
+    }
   })
   return (
     <>

@@ -6,7 +6,9 @@ import { PathMap } from '@/app/_const'
 
 export default async function Page() {
   const { contents: posts, totalCount } = await getPostList({
-    limit: PerPage
+    queries: {
+      limit: PerPage
+    }
   })
   return (
     <>

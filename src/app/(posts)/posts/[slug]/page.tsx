@@ -8,7 +8,7 @@ type Props = {
 }
 
 export default async function Page({ params }: Props) {
-  const post = await getPostDetail(params.slug)
+  const post = await getPostDetail({ contentId: params.slug })
 
   return (
     <article className="py-12" aria-label="記事詳細">
