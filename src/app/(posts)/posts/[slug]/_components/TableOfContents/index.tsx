@@ -9,43 +9,37 @@ type Props = {
 export const TableOfContents = ({ headingList }: Props) => {
   function createTableOfContents(headingList: Heading[]) {
     const output: JSX.Element[] = []
-    let h3List: JSX.Element[] = []
+    let currentList: JSX.Element[] = []
 
     for (const el of headingList) {
+      const listItem = (
+        <li key={el.id} className={`${el.type === 'h3' ? 'ml-3' : el.type === 'h4' ? 'ml-6' : 'ml-0'} list-disc`}>
+          <a className="hover:opacity-70" href={`#${el.id}`}>
+            {el.id}
+          </a>
+        </li>
+      )
+
       if (el.type === 'h2') {
-        if (h3List.length > 0) {
-          output.push(
-            <ol className="[&>li]:list-disc" key={output.length}>
-              {h3List}
-            </ol>
-          )
-          h3List = []
+        if (currentList.length > 0) {
+          output.push(<ol key={output.length}>{currentList}</ol>)
+          currentList = []
         }
-        output.push(
-          <li key={el.id}>
-            <a className="hover:opacity-70" href={`#${el.id}`}>
-              {el.id}
-            </a>
-          </li>
-        )
-      } else if (el.type === 'h3') {
-        h3List.push(
-          <li className="ml-3" key={el.id}>
-            <a className="hover:opacity-70" href={`#${el.id}`}>
-              {el.id}
-            </a>
-          </li>
-        )
+        output.push(listItem)
+      } else {
+        currentList.push(listItem)
       }
     }
-    if (h3List.length > 0) {
-      output.push(<ol key={output.length}>{h3List}</ol>)
+
+    if (currentList.length > 0) {
+      output.push(<ol key={output.length}>{currentList}</ol>)
     }
 
-    return <ol className="text-sm leading-8 [&>li]:list-disc">{output}</ol>
+    return <ol className="text-sm leading-8">{output}</ol>
   }
+
   return (
-    <div className="sticky top-4 hidden w-[300px] space-y-4 rounded-md border p-4 pl-8 lg:block">
+    <div className="sticky top-4 hidden w-[300px] space-y-4 break-words rounded-md border p-4 pl-8 lg:block">
       <div className="font-semibold">目次</div>
       <div>{createTableOfContents(headingList)}</div>
     </div>

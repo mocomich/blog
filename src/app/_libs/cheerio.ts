@@ -13,6 +13,11 @@ export function formaText(body: string) {
     $(elm).attr('id', h3Text)
   })
 
+  $('h4').each((_, elm) => {
+    const h4Text = $(elm).text()
+    $(elm).attr('id', h4Text)
+  })
+
   $('pre code').each((_, elm) => {
     const result = hljs.highlightAuto($(elm).text())
     $(elm).html(result.value)
@@ -24,7 +29,7 @@ export function formaText(body: string) {
 
 export type Heading = {
   id: string
-  type: 'h2' | 'h3'
+  type: 'h2' | 'h3' | 'h4'
 }
 
 export function getHeadingList(body: string): Heading[] {
@@ -32,13 +37,15 @@ export function getHeadingList(body: string): Heading[] {
 
   const $ = cheerio.load(body)
 
-  $('h2,h3').each((_, elm) => {
+  $('h2,h3,h4').each((_, elm) => {
     const $elm = $(elm)
     const text = $(elm).text()
     if ($elm.is('h2')) {
       headingList.push({ id: text, type: 'h2' })
     } else if ($elm.is('h3')) {
       headingList.push({ id: text, type: 'h3' })
+    } else if ($elm.is('h4')) {
+      headingList.push({ id: text, type: 'h4' })
     }
   })
 
