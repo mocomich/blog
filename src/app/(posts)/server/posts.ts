@@ -1,25 +1,34 @@
-import { MicroCMSQueries } from 'microcms-js-sdk'
-import { PostType } from '@/app/(posts)/_types'
+import { GetListRequest, GetListDetailRequest } from 'microcms-js-sdk'
 import { client } from '@/app/_libs/microcms'
+import { PostType } from '@/app/_types'
 
-export async function getPostList(queries?: MicroCMSQueries) {
+const ENDPOINT = 'blogs' as const
+
+export async function getPostList({
+  customRequestInit = {
+    cache: 'no-cache'
+  },
+  queries
+}: Pick<GetListRequest, 'queries' | 'customRequestInit'>) {
   const res = await client.getList<PostType>({
-    endpoint: 'blogs',
-    customRequestInit: {
-      cache: 'force-cache'
-    },
+    endpoint: ENDPOINT,
+    customRequestInit,
     queries
   })
 
   return res
 }
 
-export async function getPostDetail(contentId: string, queries?: MicroCMSQueries) {
+export async function getPostDetail({
+  customRequestInit = {
+    cache: 'no-cache'
+  },
+  contentId,
+  queries
+}: Pick<GetListDetailRequest, 'contentId' | 'queries' | 'customRequestInit'>) {
   const res = await client.getListDetail<PostType>({
-    endpoint: 'blogs',
-    customRequestInit: {
-      cache: 'force-cache'
-    },
+    endpoint: ENDPOINT,
+    customRequestInit,
     contentId,
     queries
   })
