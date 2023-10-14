@@ -16,16 +16,20 @@ export const Content = ({ ...props }: Props) => {
   const headingList = getHeadingList(props.body)
 
   return (
-    <div className="grid w-full lg:grid-cols-[1fr_300px] lg:items-start lg:gap-10 xl:gap-20">
-      <div className="w-full space-y-4 overflow-hidden">
+    <div className="grid w-full gap-16">
+      <div className="grid gap-10">
         <Header>{props.title}</Header>
         <DateTime className="mt-4 flex justify-end text-base" dateTime={props.publishedAt}>
           {new Date(props.publishedAt).toLocaleDateString()}
         </DateTime>
         <TagButtonList tags={props.tags} />
-        <Markdown body={props.body} />
       </div>
-      <TableOfContents headingList={headingList} />
+      <div className="grid w-full lg:grid-cols-[1fr_300px] lg:items-start lg:gap-10 xl:gap-20">
+        <div className="w-full space-y-4 overflow-hidden">
+          <Markdown body={props.body} />
+        </div>
+        <TableOfContents headingList={headingList} />
+      </div>
     </div>
   )
 }
