@@ -1,19 +1,33 @@
+'use client'
+
 import React from 'react'
+import { useSnapshot } from 'valtio'
+import { state } from '@/app/(posts)/libs/proxy'
 import { Heading } from '@/app/_libs/cheerio'
 
 type Props = {
   headingList: Heading[]
 }
 
-// h2、h3のみ考慮、それ以降のheadingが必要な場合は追加が必要
 export const TableOfContents = ({ headingList }: Props) => {
+  const { id, reset } = useSnapshot(state)
+
+  React.useEffect(() => {
+    return () => reset()
+  }, [reset])
+
   function createTableOfContents(headingList: Heading[]) {
     const output: JSX.Element[] = []
     let currentList: JSX.Element[] = []
 
     for (const el of headingList) {
       const listItem = (
-        <li key={el.id} className={`${el.type === 'h3' ? 'ml-3' : el.type === 'h4' ? 'ml-6' : 'ml-0'} list-disc`}>
+        <li
+          key={el.id}
+          className={`${el.type === 'h3' ? 'ml-3' : el.type === 'h4' ? 'ml-6' : 'ml-0'} ${
+            el.id === id ? 'font-semibold' : 'text-gray-600/70'
+          } list-disc`}
+        >
           <a className="hover:opacity-70" href={`#${el.id}`}>
             {el.id}
           </a>
