@@ -3,7 +3,7 @@ import { DateTime } from '@/app/(posts)/_components/DateTime'
 import 'highlight.js/styles/tokyo-night-dark.css'
 import { TagButtonList } from '@/app/(posts)/_components/TagButtonList'
 import { getHeadingList } from '@/app/_libs/cheerio'
-import { assertIsExist, flexibleDateFormat } from '@/app/_libs/utils'
+import { assertIsExist } from '@/app/_libs/utils'
 import { PostType } from '@/app/_types'
 import { Header } from '../Header'
 import { Markdown } from '../Markdown'
@@ -19,8 +19,8 @@ export const Content = ({ ...props }: Props) => {
     <div className="grid w-full gap-16">
       <div className="grid gap-10">
         <Header>{props.title}</Header>
-        <DateTime className="mt-4 flex justify-end text-base" dateTime={props.publishedAt}>
-          {flexibleDateFormat(new Date(props.publishedAt))}
+        <DateTime className="mt-4 flex justify-start text-sm" dateTime={props.publishedAt}>
+          {new Date(props.publishedAt).toLocaleDateString()}
         </DateTime>
         <TagButtonList tags={props.tags} />
       </div>
