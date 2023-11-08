@@ -16,7 +16,6 @@ const options: HTMLReactParserOptions = {
 
     if (domNode.name === 'h2') {
       const id = (domNode.children[0] as Text).data
-      console.log(id)
 
       return <H2 id={id}>{domToReact(domNode.children, options)}</H2>
     }
