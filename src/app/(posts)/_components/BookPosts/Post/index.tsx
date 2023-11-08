@@ -11,7 +11,7 @@ export const Post = ({
 }: Pick<PostType, 'title' | 'domain' | 'publishedAt'> & React.ComponentPropsWithoutRef<typeof Book>) => {
   return (
     <Book variant={props.variant}>
-      <Typography as="h2" variant="h4">
+      <Typography aria-labelledby={props.title} as="h2" variant="h4">
         {props.title}
       </Typography>
       <div className="grid gap-4">
