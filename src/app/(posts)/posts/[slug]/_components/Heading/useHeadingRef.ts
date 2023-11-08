@@ -16,7 +16,7 @@ export const useHeadingRef = (id: string | undefined) => {
     if (entry.isIntersecting) {
       set(id)
     }
-  }, [entry?.isIntersecting, id])
+  }, [entry?.isIntersecting, set, id])
 
   return { ref }
 }
