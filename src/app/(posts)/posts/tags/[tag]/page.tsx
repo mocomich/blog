@@ -14,7 +14,6 @@ export default async function Page({ params }: Props) {
   const { tag } = params
   const filters = `tags[contains]${tag}`
   const { contents: posts, totalCount } = await getPostList({
-    customRequestInit: { next: { revalidate: 60 } },
     queries: {
       limit: PerPage,
       filters
