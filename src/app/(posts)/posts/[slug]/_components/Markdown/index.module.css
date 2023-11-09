@@ -90,6 +90,7 @@
 
 .content ul > li {
   list-style: disc;
+  line-height: 2rem;
 }
 
 .content ol > li {
