@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react'
 
-import { flexibleDateFormat } from '@/app/_libs/utils'
+import { formatDate } from '@/app/_libs/utils'
 import { Typography } from '@/components/Typography'
 import { DateTime } from '../DateTime'
 import { Domain } from '../Domain'
@@ -22,7 +22,7 @@ const meta: Meta<typeof Card> = {
             <div className="flex justify-between">
               <Domain>vinyl.com</Domain>
               <DateTime className="text-xs" dateTime={'2022-09-09T00:00:00.000Z'}>
-                {flexibleDateFormat(new Date('2022-09-09T00:00:00.000Z'))}
+                {formatDate(new Date('2022-09-09'), 'yyyy/MM/dd')}
               </DateTime>
             </div>
           </div>

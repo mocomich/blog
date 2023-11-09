@@ -11,8 +11,12 @@ export function assertIsExist<T>(v: T | null | undefined, target = ''): asserts 
   }
 }
 
+export function formatDate(date: Date, formatPattern: string) {
+  return format(date, formatPattern)
+}
+
 export function flexibleDateFormat(date: Date) {
-  const formatDate = (date: Date) => {
+  const formatDateFn = (date: Date) => {
     const diffInDays = differenceInDays(new Date(), date)
 
     if (diffInDays < 8) {
@@ -21,10 +25,10 @@ export function flexibleDateFormat(date: Date) {
         addSuffix: true
       })
     } else if (diffInDays < 365) {
-      return format(date, 'MM月dd日')
+      return formatDate(date, 'MM/dd')
     } else {
-      return format(date, 'yyyy年MM月dd日')
+      return formatDate(date, 'yyyy/MM/dd')
     }
   }
-  return formatDate(date)
+  return formatDateFn(date)
 }

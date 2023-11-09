@@ -2,7 +2,7 @@ import React from 'react'
 import { Book } from '@/app/(posts)/_components/Book'
 import { DateTime } from '@/app/(posts)/_components/DateTime'
 import { Domain } from '@/app/(posts)/_components/Domain'
-import { flexibleDateFormat } from '@/app/_libs/utils'
+import { formatDate } from '@/app/_libs/utils'
 import { PostType } from '@/app/_types'
 import { Typography } from '@/components/Typography'
 
@@ -18,7 +18,7 @@ export const Post = ({
         <div className="flex justify-between">
           <Domain>{props.domain}</Domain>
           <DateTime className="text-xs" dateTime={props.publishedAt}>
-            {flexibleDateFormat(new Date(props.publishedAt))}
+            {formatDate(new Date(props.publishedAt), 'MM/dd')}
           </DateTime>
         </div>
       </div>
