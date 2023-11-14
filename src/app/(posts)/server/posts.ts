@@ -6,7 +6,7 @@ const ENDPOINT = 'blogs' as const
 
 export async function getPostList({
   customRequestInit = {
-    cache: 'force-cache'
+    next: { revalidate: 60 }
   },
   queries
 }: Pick<GetListRequest, 'queries' | 'customRequestInit'>) {
@@ -21,7 +21,7 @@ export async function getPostList({
 
 export async function getPostDetail({
   customRequestInit = {
-    cache: 'force-cache'
+    next: { revalidate: 60 }
   },
   contentId,
   queries
