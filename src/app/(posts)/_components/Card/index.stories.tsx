@@ -18,7 +18,12 @@ const meta: Meta<typeof Card> = {
             テスト
           </Typography>
           <div className="grid gap-4">
-            <TagButtonList tags={['Next.js', 'React']} />
+            <TagButtonList
+              tags={[
+                { id: `1`, name: 'Next.js' },
+                { id: `2`, name: 'React' }
+              ]}
+            />
             <div className="flex justify-between">
               <Domain>vinyl.com</Domain>
               <DateTime className="text-xs" dateTime={'2022-09-09T00:00:00.000Z'}>

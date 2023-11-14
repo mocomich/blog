@@ -57,7 +57,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
             >
               {post.tags.map((tag) => (
                 <span
-                  key={tag}
+                  key={tag.name}
                   style={{
                     fontSize: 20,
                     background: 'gray',
@@ -70,7 +70,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
                     alignItems: 'center'
                   }}
                 >
-                  {tag}
+                  {tag.name}
                 </span>
               ))}
             </div>
