@@ -11,7 +11,7 @@ export const Posts = ({ posts }: { posts: PostType[] }) => {
         {posts.map((post) => (
           <li key={post.id}>
             <Link
-              aria-label={post.title}
+              aria-labelledby={post.title}
               href={post.domain[0] === 'zenn.dev' ? post.url : PathMap.postDetail(post.id)}
               target={post.domain[0] === 'zenn.dev' ? '_blank' : undefined}
               className="hover:opacity-60"
