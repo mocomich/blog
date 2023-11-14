@@ -10,6 +10,16 @@ type Props = {
   }
 }
 
+export async function generateStaticParams() {
+  const { totalCount } = await getPostList({})
+  const range = (start: number, end: number) => [...Array(end - start + 1)].map((_, i) => start + i)
+  const paths = range(1, Math.ceil(totalCount / PerPage)).map((num) => ({
+    current: `${num}`
+  }))
+
+  return paths
+}
+
 export default async function Page({ params }: Props) {
   const current = parseInt(params.current as string, 10)
   const filters = `domain[contains]zenn`

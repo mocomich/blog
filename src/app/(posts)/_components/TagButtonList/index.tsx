@@ -7,7 +7,7 @@ export const TagButtonList = ({ tags }: Pick<PostType, 'tags'>) => {
     <ul className="flex flex-wrap gap-2">
       {tags.map((tag) => (
         <li key={tag.id}>
-          <TagButton path={PathMap.tagsPosts(tag.name)}>{tag.name}</TagButton>
+          <TagButton path={PathMap.tagsPosts(tag.id)}>{tag.name}</TagButton>
         </li>
       ))}
     </ul>

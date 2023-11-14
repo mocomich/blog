@@ -8,8 +8,8 @@ export const postsFixture = (num: number): PostType[] => {
     url: 'http',
     body: 'test',
     tags: [
-      { id: `${i}`, name: 'Next.js' },
-      { id: `${i + 1}`, name: 'React' }
+      { id: `nextjs`, name: 'Next.js' },
+      { id: `react`, name: 'React' }
     ],
     domain: ['zenn.dev'],
     updatedAt: '2022',
