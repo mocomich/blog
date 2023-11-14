@@ -1,10 +1,15 @@
+export type TagType = {
+  id: string
+  name: string
+}
+
 export type PostType = {
   body?: string
   domain: ['tech-vinyl.com' | 'zenn.dev']
   excerpt: string
   id: string
   publishedAt: string
-  tags: string[]
+  tags: TagType[]
   title: string
   updatedAt: string
   url: string
