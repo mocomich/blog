@@ -4,7 +4,6 @@ import { formatDate } from '@/app/_libs/utils'
 import { Typography } from '@/components/Typography'
 import { DateTime } from '../DateTime'
 import { Domain } from '../Domain'
-import { TagButtonList } from '../TagButtonList'
 import Card from '.'
 
 const meta: Meta<typeof Card> = {
@@ -18,12 +17,6 @@ const meta: Meta<typeof Card> = {
             テスト
           </Typography>
           <div className="grid gap-4">
-            <TagButtonList
-              tags={[
-                { id: `1`, name: 'Next.js' },
-                { id: `2`, name: 'React' }
-              ]}
-            />
             <div className="flex justify-between">
               <Domain>vinyl.com</Domain>
               <DateTime className="text-xs" dateTime={'2022-09-09T00:00:00.000Z'}>
