@@ -1,4 +1,4 @@
-import { differenceInDays, format, formatDistanceToNow } from 'date-fns'
+import { differenceInDays, format, formatDistanceToNow, formatISO } from 'date-fns'
 import { ja } from 'date-fns/locale'
 import { combineStyles } from '@/app/_libs/style'
 
@@ -26,5 +26,9 @@ export const RelativeTimestamp = ({ date, className }: Props) => {
     }
   }
 
-  return <time className={combineStyles(className)}>{dateFormat(date)}</time>
+  return (
+    <time dateTime={formatISO(date)} className={combineStyles(className)}>
+      {dateFormat(date)}
+    </time>
+  )
 }
