@@ -1,6 +1,6 @@
 # My Blog
 
-[Welcome to my blog](https://tech-vinyl.com/)
+[Welcome to my blog](https://vinyl-tech.net/)
 This blog is built using the Next.js framework and is deployed on Vercel.
 
 ## Package
