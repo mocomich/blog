@@ -1,9 +1,8 @@
 import React from 'react'
 import { Book } from '@/app/(posts)/_components/Book'
-import { DateTime } from '@/app/(posts)/_components/DateTime'
 import { Domain } from '@/app/(posts)/_components/Domain'
-import { formatDate } from '@/app/_libs/utils'
 import { PostType } from '@/app/_types'
+import { RelativeTimestamp } from '@/components/RelativeTimestamp'
 import { Typography } from '@/components/Typography'
 
 export const Post = ({
@@ -17,9 +16,7 @@ export const Post = ({
       <div className="grid gap-4">
         <div className="flex justify-between">
           <Domain>{props.domain}</Domain>
-          <DateTime className="text-xs" dateTime={props.publishedAt}>
-            {formatDate(new Date(props.publishedAt), 'MM/dd')}
-          </DateTime>
+          <RelativeTimestamp className="text-xs" date={new Date(props.publishedAt)} />
         </div>
       </div>
     </Book>

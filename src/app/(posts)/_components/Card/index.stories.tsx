@@ -1,8 +1,7 @@
 import { StoryObj, Meta } from '@storybook/react'
 
-import { formatDate } from '@/app/_libs/utils'
+import { RelativeTimestamp } from '@/components/RelativeTimestamp'
 import { Typography } from '@/components/Typography'
-import { DateTime } from '../DateTime'
 import { Domain } from '../Domain'
 import Card from '.'
 
@@ -19,9 +18,7 @@ const meta: Meta<typeof Card> = {
           <div className="grid gap-4">
             <div className="flex justify-between">
               <Domain>vinyl.com</Domain>
-              <DateTime className="text-xs" dateTime={'2022-09-09T00:00:00.000Z'}>
-                {formatDate(new Date('2022-09-09'), 'yyyy/MM/dd')}
-              </DateTime>
+              <RelativeTimestamp className="text-xs" date={new Date('2022-09-09')} />
             </div>
           </div>
         </Card.CardContent>
