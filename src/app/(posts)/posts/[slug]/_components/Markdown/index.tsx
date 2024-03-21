@@ -51,7 +51,7 @@ export const Markdown = async ({ body }: Props) => {
         const ogp = ogpInfo.find((ogp) => ogp.url === url)
         return (
           ogp && (
-            <a href={ogp.url} target="_blank" rel="noopener noreferrer" className="block">
+            <a aria-label={ogp.title} href={ogp.url} target="_blank" rel="noopener noreferrer" className="block py-6">
               <OGPCard {...ogp} />
             </a>
           )
