@@ -6,13 +6,13 @@ type Props = {
   date: Date
 } & Pick<React.ComponentPropsWithoutRef<'time'>, 'className'>
 
+export const SHORT_DATE_FORMAT = 'MM月dd日'
+export const LONG_DATE_FORMAT = 'yyyy年MM月dd日'
+
 export const RelativeTimestamp = ({ date, className }: Props) => {
   const diffInDays = differenceInDays(new Date(), date)
 
   const dateFormat = (date: Date) => {
-    const SHORT_DATE_FORMAT = 'MM月dd日'
-    const LONG_DATE_FORMAT = 'yyyy年MM月dd日'
-
     switch (true) {
       case diffInDays < 8:
         return formatDistanceToNow(date, {
