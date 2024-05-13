@@ -1,10 +1,10 @@
 import React from 'react'
 import 'highlight.js/styles/tokyo-night-dark.css'
+import { DateTime } from '@/app/(posts)/_components/DateTime'
 import { TagButtonList } from '@/app/(posts)/_components/TagButtonList'
 import { getHeadingList } from '@/app/_libs/cheerio'
 import { assertIsExist } from '@/app/_libs/utils'
 import { PostType } from '@/app/_types'
-import { RelativeTimestamp } from '@/components/RelativeTimestamp'
 import { Header } from '../Header'
 import { Markdown } from '../Markdown'
 import { TableOfContents } from '../TableOfContents'
@@ -19,7 +19,7 @@ export const Content = ({ ...props }: Props) => {
     <div className="grid w-full gap-16">
       <div className="grid gap-10">
         <Header>{props.title}</Header>
-        <RelativeTimestamp className="mt-4 flex justify-start text-xs" date={new Date(props.publishedAt)} />
+        <DateTime className="mt-4 flex justify-start text-xs" date={new Date(props.publishedAt)} />
         <TagButtonList tags={props.tags} />
       </div>
       <div className="grid w-full lg:grid-cols-[1fr_300px] lg:items-start lg:gap-10 xl:gap-20">

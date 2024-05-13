@@ -6,8 +6,7 @@ const meta: Meta<typeof DateTime> = {
   title: 'posts/DateTime',
   component: DateTime,
   args: {
-    children: '2022-09-09',
-    dateTime: '2022-09-09T00:00:00.000Z'
+    date: new Date()
   },
   tags: ['autodocs']
 }

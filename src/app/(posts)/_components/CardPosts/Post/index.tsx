@@ -2,8 +2,8 @@ import * as React from 'react'
 import Card from '@/app/(posts)/_components/Card'
 import { Domain } from '@/app/(posts)/_components/Domain'
 import { PostType } from '@/app/_types'
-import { RelativeTimestamp } from '@/components/RelativeTimestamp'
 import { Typography } from '@/components/Typography'
+import { DateTime } from '../../DateTime'
 import { TagButtonList } from '../../TagButtonList'
 
 export const Post = ({ ...props }: Pick<PostType, 'title' | 'domain' | 'tags' | 'publishedAt'>) => {
@@ -17,7 +17,7 @@ export const Post = ({ ...props }: Pick<PostType, 'title' | 'domain' | 'tags' | 
           <TagButtonList tags={props.tags} />
           <div className="flex justify-between">
             <Domain>{props.domain}</Domain>
-            <RelativeTimestamp className="text-xs" date={new Date(props.publishedAt)} />
+            <DateTime className="text-xs" date={new Date(props.publishedAt)} />
           </div>
         </div>
       </Card.CardContent>

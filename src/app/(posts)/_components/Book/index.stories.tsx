@@ -1,7 +1,7 @@
 import { StoryObj, Meta } from '@storybook/react'
 
-import { RelativeTimestamp } from '@/components/RelativeTimestamp'
 import { Typography } from '@/components/Typography'
+import { DateTime } from '../DateTime'
 import { Domain } from '../Domain'
 import { Book } from '.'
 
@@ -17,7 +17,7 @@ const meta: Meta<typeof Book> = {
         <div className="grid gap-4">
           <div className="flex justify-between">
             <Domain>Zenn</Domain>
-            <RelativeTimestamp className="text-xs" date={new Date('2022-09-09')} />
+            <DateTime className="text-xs" date={new Date('2022-09-09')} />
           </div>
         </div>
       </>
